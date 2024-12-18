@@ -1,4 +1,5 @@
-__author__ = '8568922, Wolff', '8544494,Aktar' 
+__author__ = '8568922, Wolff', '8544494,Aktar'
+
 menu = [
     {"name": "VUNKY-BURGER<", "typ": "main", "categorie": "vegan", "price": 12}
     {"name": "FALAFEL-BURGER", "typ": "main", "categorie": "vegan", "price": 13}
@@ -20,8 +21,7 @@ menu = [
     {"name": "BEER", "typ": "drink", "categorie": "alcohol", "price": 4 }
 ]
 
-
-class order:
+class Order:
     def __init__(self, meal_index: int, total_price, table: int):
         if meal_index < 0 or meal_index >= len(menu):
             raise IndexError("Invalid meal index.")
@@ -29,14 +29,15 @@ class order:
         self.total_price = self.meal["price"]
         self.table = table
     def __str__(self, meal_index: int, total_price, table: int):
-        print(f"Meal ID:" {meal_index}, "Meal:" {menu[meal_index]["name"]}, "table:" )
+        print(f"Meal ID:" {meal_index}, "Meal:" {menu[meal_index]["name", "price"]}, "table:" {table})
 
-class table:
+class Table:
     def __init__(self, table_num):
         self.table_num = int(table_num)
+    def __str__(self, table_num):
+        return self.table_num
 
-
-def take_order(table_num):
+def take_order():
     table_num = input(table_num)
     table_order = input("Order: \n")
     if table_order in menu
