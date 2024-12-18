@@ -1,12 +1,25 @@
-__author__ = '8568922, Wolff'
+__author__ = '8568922, Wolff', '8544494,Aktar' 
 menu = [
-    {
-        "id": 1, "name" = "vunky burger", price = "12$"
-     }
-    {
-        
-    }
+    {"name": "VUNKY-BURGER<", "typ": "main", "categorie": "vegan", "price": 12}
+    {"name": "FALAFEL-BURGER", "typ": "main", "categorie": "vegan", "price": 13}
+    {"name": "CLASSIC-BURGER", "typ": "main", "categorie": "beef", "price": 9}
+    {"name": "CHEESE-BURGER", "typ": "main", "categorie": "beef", "price": 10}
+    {"name": "FOREST-BURGER", "typ": "main", "categorie": "veggie", "price": 12 }
+    {"name": "CHILT-BURGER", "typ": "main", "categorie": "beef, hot", "price": 12.5 }
+    {"name": "PIZZA-MARGARITA", "typ": "main", "categorie": "vegan", "price:" 9}
+    {"name": "PIZZA-HAWAI": "typ": "main", "categorie": "pork", "price": 10}
+    {"name": "PIZZA-MOZZARELLA", "typ": "main", "categorie" : "vegan", "price": 10} 
+    {"name": "WASSER (0,3)", "typ": "drink", "categorie": "alcohol-free", "price": 2}
+    {"name": "WASSER (0,5)", "typ": "drink", "categorie": "alcohol-free", "price": 3.5}
+    {"name": "COLA (0,4)", "typ": "drink", "categorie": "alcohol-free", "price": 3.5}
+    {"name": "COLA (0,2)", "typ": "drink", "categorie": "alcohol-free", "price": 2.5 }
+    {"name": "FANTA (0,4)", "typ": "drink", "categorie": "alcohol-free", "price": 3.5 }
+    {"name": "FANTA (0,2)", "typ": "drink", "categorie": "alcohol-free", "price": 2.5 }
+    {"name": "ICE-TEE (Pfirisch)", "typ": "drink", "categorie": "alcohol-free", "price": 4 }
+    {"name": "ICE-TEE (Zitrone))", "typ": "drink", "categorie": "alcohol-free", "price": 4 }
+    {"name": "BEER", "typ": "drink", "categorie": "alcohol", "price": 4 }
 ]
+
 
 class meal:
     def __init__(self, name, type, category, price):
