@@ -15,8 +15,22 @@ with open('food.csv', 'r', encoding='utf-8') as file:
         menu.append(row)  # Add to menu list.
 
 class Order:
+    '''
+    This class is mainly there to define the structure of the order object. It includes the param 
+    meal_index for the index of each item on the imported menu, that works like an index, and the 
+    table another class that I explain down below in its own docstring. Both params are defined as
+    integers.
+    The class includes four methods: 
+    1. __init__
+    2. __str__
+    3. create_invoice
+    4. add_special_request
+    '''
     # Initialize the order class.
     def __init__(self, meal_index: int, table: int):
+        '''
+        Initializes the class.
+        '''
         # Meal index can't be unter 0 oder over the length of the menu - 1
         if meal_index < 0 or meal_index > len(menu) - 1:
             # Raise an error.
@@ -31,7 +45,9 @@ class Order:
         # Empty list to store.
 
     def __str__(self):
-        # Make readable/printable.
+        '''
+        Makes it readable/printable.
+        '''
         special_str = f" ({', '.join(self.special_requests)})" if self.special_requests else ""
         # Return print statement for good readability of order summary.
         # ":.2f" converts 10 -> 10.00, and 10.5 -> 10.50 !!! 
@@ -41,10 +57,13 @@ class Order:
         return f"Table {self.table}: {self.meal['name']} - ${self.total_price:.2f}{special_str}"
 
     def create_invoice(self):
+        '''
+        Creates and prints the invoice with all the necessary information in an appealing manner.
+        '''
         timestamp = str(datetime.now())
         # Save invoice to a .txt file
         invoice_filename = f"invoices:_{self.table}.txt"
-        # Create name.
+        # Create name o f.txt file and inserts the invoice.
         with open(invoice_filename, "a") as f:
             # Create opening text thats being saved.
             f.write(f"Invoice for Table {self.table} {timestamp}\n")
@@ -78,6 +97,12 @@ class Table:
 number_of_tables = 0  # Number of tables in the restaurant.
 
 def setup():
+    '''
+    This function asks for input necessary for setup (in this case the number of tables the
+    restaurant has).
+    This function is very easily customizable, if the restaurant happens to need more setup 
+    variables.
+    '''
     global number_of_tables
     while True:
         try:
@@ -91,7 +116,24 @@ def setup():
             print("Invalid input. Please enter a valid number.")
 
 def take_order():
-    if number_of_tables <= 0:
+    '''
+    This function lets the user take an order as the name suggests.
+    It guides the user through a bunch of questions:
+    
+    1. What table is the order for?
+    2. Prints the entire menu with corresponding keys.
+    3. Asks for the key of the order.
+    4. Returns the order summary and asks if the customer has any special requests.
+    Keeps asking for special requests until 'done' is input.
+    5. Asks if that's all.
+    6. Calculates the total and prints summary. Asks if the user wants to edit something.
+    7. Prints final invoice. Saves it in the .txt file.
+    
+       
+    It uses both classes and the create_invoice() function.
+    '''
+    
+    if number_of_tables <= 0:  # Because the num of tables hasn't been input.
         print("Error: Please run the setup first using the '!setup' command.")
         return
 
@@ -193,9 +235,16 @@ def take_order():
 
 def main():
     '''
-    Main() is a setup function that welcoms the user and prints the necessary commands to set up 
-    the system (Asks how many tables the restaurant has, so it's customizable, and doesn't let a 
-    server accidentally input table 400/ will let them know).
+    Main() is the mother function that welcoms the user and prints the necessary commands to set up 
+    the system before actual use by calling the setup() function when "!setup" is input.
+     
+    Elif when "!order" is input, it calls the take_order() function.
+    
+    Elif when "!exit" is input, it breaks the program. 
+    
+    For breaking inside the take_order() function the user has to input "quit".
+    
+    It doesn't carry any parameters.
     '''
     print("Welcome to the Restaurant Management System!")
     print("Commands:")
