@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 The program "restaurant.py" outputs the console UI for a Restaurant Management System™, which lets the server take orders.
 It's made up of many functions with lots of different features that I will describe in the following paragraphs.
 
@@ -60,6 +61,9 @@ For further information regarding documentation or the user manual, see the anal
 The current implementation allows for this functionality, but there are potential improvements. One suggestion is to always provide the ability to overwrite everything (e.g., a special request could increase the price by one euro since ingredients might be replaced, and it's generally important to allow everything in such a program to be overwritten when necessary). Additionally, it could be possible to include a feature to request tips and calculate percentages for them.
 
 At present, no bugs are known.
+=======
+I deserve a job for this masterpiece.
+>>>>>>> b8dbbcba90ba33f0bf2420b416fe92fe9b21de58
 =======
 I deserve a job for this masterpiece.
 >>>>>>> b8dbbcba90ba33f0bf2420b416fe92fe9b21de58
