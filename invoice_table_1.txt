@@ -1,0 +1,14 @@
+Invoice for Table 1
+Meal: COLA (0.2)
+Category: alcohol-free
+Special Requests: None
+Total Price: $2.50
+
+----------------------------------------
+Invoice for Table 1
+Meal: PIZZA-HAWAI
+Category: pork
+Special Requests: None
+Total Price: $10.00
+
+----------------------------------------
