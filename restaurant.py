@@ -177,23 +177,3 @@ def take_order():
         order.create_invoice()
 
 take_order()
-
-'''def invoice_check(self, order):
-    # Offer user to make final changes. 
-    # Add, del or edit items off the list.
-    # call create invoice maybe recursively and create a new 
-    # invoice with every change? idk if thats possible
-    
-def create_invoice(self, order):
-    print(order)
-    
-def save_invoice():
-    # save final invoice in .txt file
-    
-def invoice():
-    # if SKIP by console input: call create_invoice() 
-    # else: call invoice_check() 
-    # call save_invoice()
-    # if SKIP by console input: call create_invoice() 
-    # else: call invoice_check() 
-    # call save_invoice()'''
